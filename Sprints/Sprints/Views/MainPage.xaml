@@ -16,6 +16,17 @@
             </x:Arguments>
         </NavigationPage>
 
+        <NavigationPage Title="Sprints">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_feed.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:SprintsPage />
+            </x:Arguments>
+        </NavigationPage>
+
         <NavigationPage Title="Tasks">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
