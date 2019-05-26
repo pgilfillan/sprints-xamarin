@@ -8,10 +8,8 @@ namespace Sprints.Models
         public string Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateTime beginDateTime { get; set; }
-        public DateTime endDateTime { get; set; }
-
-
-        public List<TaskItem> tasks;
+        public DateTime BeginDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
+        public List<TaskItem> Tasks { get; set; }
     }
 }

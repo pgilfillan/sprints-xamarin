@@ -8,8 +8,8 @@ namespace Sprints.Models
         public string Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public GoalItem goal { get; set; }
-
-        public List<String> labels;
+        public GoalItem Goal { get; set; }
+        public int Points { get; set; }
+        public List<String> Labels { get; set; }
     }
 }
