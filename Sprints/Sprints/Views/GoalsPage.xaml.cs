@@ -26,7 +26,7 @@ namespace Sprints.Views
 
         async void OnGoalSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var goal = args.SelectedItem as Goal;
+            var goal = args.SelectedItem as GoalItem;
             if (goal == null)
                 return;
 

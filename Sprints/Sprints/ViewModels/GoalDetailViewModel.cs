@@ -6,10 +6,10 @@ namespace Sprints.ViewModels
 {
     public class GoalDetailViewModel : BaseViewModel
     {
-        public Goal Goal { get; set; }
-        public GoalDetailViewModel(Goal goal = null)
+        public GoalItem Goal { get; set; }
+        public GoalDetailViewModel(GoalItem goal = null)
         {
-            Title = goal?.Text;
+            Title = goal?.Title;
             Goal = goal;
         }
     }

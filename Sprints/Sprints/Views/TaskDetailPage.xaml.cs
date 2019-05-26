@@ -8,28 +8,28 @@ using Sprints.ViewModels;
 
 namespace Sprints.Views
 {
-    public partial class GoalDetailPage : ContentPage
+    public partial class TaskDetailPage : ContentPage
     {
-        GoalDetailViewModel viewModel;
+        TaskDetailViewModel viewModel;
 
-        public GoalDetailPage(GoalDetailViewModel viewModel)
+        public TaskDetailPage(TaskDetailViewModel viewModel)
         {
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
         }
 
-        public GoalDetailPage()
+        public TaskDetailPage()
         {
             InitializeComponent();
 
-            var goal = new GoalItem
+            var task = new TaskItem
             {
                 Title = "Item 1",
                 Description = "This is an item description."
             };
 
-            viewModel = new GoalDetailViewModel(goal);
+            viewModel = new TaskDetailViewModel(task);
             BindingContext = viewModel;
         }
     }

@@ -5,17 +5,11 @@ using Xamarin.Forms.Xaml;
 
 namespace Sprints.Views
 {
-    public partial class MainPage : MasterDetailPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void About_Button_Clicked(object sender, EventArgs e)
-        {
-            var MDPage = App.Current.MainPage as MasterDetailPage;
-            MDPage.Detail.Navigation.PushAsync(new NavigationPage(new AboutPage()));
         }
     }
 }

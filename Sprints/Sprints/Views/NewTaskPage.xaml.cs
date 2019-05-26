@@ -8,15 +8,15 @@ using Sprints.Models;
 
 namespace Sprints.Views
 {
-    public partial class NewGoalPage : ContentPage
+    public partial class NewTaskPage : ContentPage
     {
-        public GoalItem Goal { get; set; }
+        public TaskItem Task { get; set; }
 
-        public NewGoalPage()
+        public NewTaskPage()
         {
             InitializeComponent();
 
-            Goal = new GoalItem
+            Task = new TaskItem
             {
                 Title = "Item name",
                 Description = "This is an item description."
@@ -27,7 +27,7 @@ namespace Sprints.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddGoal", Goal);
+            MessagingCenter.Send(this, "AddTask", Task);
             await Navigation.PopModalAsync();
         }
 

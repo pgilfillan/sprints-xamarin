@@ -14,6 +14,7 @@ namespace Sprints
             InitializeComponent();
 
             DependencyService.Register<GoalDataStore>();
+            DependencyService.Register<TaskDataStore>();
             MainPage = new MainPage();
         }
 

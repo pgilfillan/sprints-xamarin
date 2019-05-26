@@ -13,19 +13,19 @@ namespace Sprints.ViewModels
 {
     public class GoalsViewModel : BaseViewModel
     {
-        public IDataStore<Goal> DataStore => DependencyService.Get<IDataStore<Goal>>() ?? new GoalDataStore();
-        public ObservableCollection<Goal> Goals { get; set; }
+        public IDataStore<GoalItem> DataStore => DependencyService.Get<IDataStore<GoalItem>>() ?? new GoalDataStore();
+        public ObservableCollection<GoalItem> Goals { get; set; }
         public Command LoadGoalsCommand { get; set; }
 
         public GoalsViewModel()
         {
             Title = "Goals";
-            Goals = new ObservableCollection<Goal>();
+            Goals = new ObservableCollection<GoalItem>();
             LoadGoalsCommand = new Command(async () => await ExecuteLoadGoalsCommand());
 
-            MessagingCenter.Subscribe<NewGoalPage, Goal>(this, "AddGoal", async (obj, goal) =>
+            MessagingCenter.Subscribe<NewGoalPage, GoalItem>(this, "AddGoal", async (obj, goal) =>
             {
-                var newGoal = goal as Goal;
+                var newGoal = goal as GoalItem;
                 Goals.Add(newGoal);
                 await DataStore.AddItemAsync(newGoal);
             });

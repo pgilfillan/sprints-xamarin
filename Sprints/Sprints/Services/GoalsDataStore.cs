@@ -6,17 +6,17 @@ using Sprints.Models;
 
 namespace Sprints.Services
 {
-    public class GoalDataStore : IDataStore<Goal>
+    public class GoalDataStore : IDataStore<GoalItem>
     {
-        List<Goal> goals;
+        List<GoalItem> goals;
 
         public GoalDataStore()
         {
-            goals = new List<Goal>();
-            var mockGoals = new List<Goal>
+            goals = new List<GoalItem>();
+            var mockGoals = new List<GoalItem>
             {
-                new Goal { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Goal { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
+                new GoalItem { Id = Guid.NewGuid().ToString(), Title = "First item", Description="This is a goal description 1." },
+                new GoalItem { Id = Guid.NewGuid().ToString(), Title = "Second item", Description="This is a goal description 2." },
             };
 
             foreach (var goal in mockGoals)
@@ -25,16 +25,16 @@ namespace Sprints.Services
             }
         }
 
-        public async Task<bool> AddItemAsync(Goal goal)
+        public async Task<bool> AddItemAsync(GoalItem goal)
         {
             goals.Add(goal);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Goal goal)
+        public async Task<bool> UpdateItemAsync(GoalItem goal)
         {
-            var oldItem = goals.Where((Goal arg) => arg.Id == goal.Id).FirstOrDefault();
+            var oldItem = goals.Where((GoalItem arg) => arg.Id == goal.Id).FirstOrDefault();
             goals.Remove(oldItem);
             goals.Add(goal);
 
@@ -43,18 +43,18 @@ namespace Sprints.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = goals.Where((Goal arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = goals.Where((GoalItem arg) => arg.Id == id).FirstOrDefault();
             goals.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Goal> GetItemAsync(string id)
+        public async Task<GoalItem> GetItemAsync(string id)
         {
             return await Task.FromResult(goals.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Goal>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<GoalItem>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(goals);
         }

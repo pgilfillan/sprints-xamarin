@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -21,9 +21,6 @@
     </Compile>
     <Compile Update="Views\GoalDetailPage.xaml.cs">
       <DependentUpon>GoalDetailPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\MainPageDetail.xaml.cs">
-      <DependentUpon>MainPageDetail.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\NewGoalPage.xaml.cs">
       <DependentUpon>NewGoalPage.xaml</DependentUpon>
