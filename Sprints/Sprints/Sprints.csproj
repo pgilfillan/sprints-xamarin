@@ -25,5 +25,8 @@
     <Compile Update="Views\NewGoalPage.xaml.cs">
       <DependentUpon>NewGoalPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

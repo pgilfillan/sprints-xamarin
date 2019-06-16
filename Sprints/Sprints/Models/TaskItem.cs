@@ -11,5 +11,15 @@ namespace Sprints.Models
         public GoalItem Goal { get; set; }
         public int Points { get; set; }
         public List<String> Labels { get; set; }
+        public TaskItem.TaskStatus Status { get; set; }
+
+        enum TaskStatus
+        {
+            Pending,
+            Active,
+            Completed
+        }
     }
+
+
 }
