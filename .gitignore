@@ -1,4 +1,5 @@
 *.sln
+!Sprints.sln
 bin/
 obj/
 .vs
